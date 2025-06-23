@@ -1,0 +1,67 @@
+<!-- Ejemplo de estructura HTML mínima -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu Página</title>
+  <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+  <div class="bg-image">
+    <picture>
+      <source srcset="imagenes/portadamobil.png" media="(max-width: 1400px)">
+      <img src="imagenes/fondopri.png" alt="Fondo" />
+    </picture>
+  </div>
+  
+  <header class="main-header">
+  
+    <nav class="menu">
+      <ul>
+        <li><a href="#">nosotros</a></li>
+        <li class="has-submenu">
+          <a href="#">soluciones</a>
+          <ul>
+            <li><a href="#">tecnologia</a></li>
+            <li><a href="#">climatizacion</a></li>
+            <li><a href="#">electricidad</a></li>
+            <li><a href="#">aislamiento</a></li>
+            <li><a href="#">tablaroca</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Redes sociales vertical -->
+  <div class="social-vertical">
+    <a href="https://facebook.com" target="_blank" title="Facebook">
+      <img src="imagenes/redsocial.png" alt="Facebook" width="24">
+    </a>
+    <a href="https://instagram.com" target="_blank" title="Instagram">
+      <img src="imagenes/facebook.png" alt="Instagram" width="24">
+    </a>
+    <a href="https://twitter.com" target="_blank" title="Twitter">
+      <img src="imagenes/linkedin.png" alt="Twitter" width="24">
+    </a>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" title="WhatsApp">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp" width="38">
+  </a>
+
+  <!-- Imágenes en arco alrededor de una imagen central -->
+  <div class="arco-container">
+    <img src="imagenes/logoblanco.png" alt="Central" class="img-central">
+    <a class="img-arco arco1" href="subpagina1.html"><img src="imagenes/Logo-climatizacion-blanco.png" alt="Arco 1"></a>
+    <a class="img-arco arco2" href="subpagina2.html"><img src="imagenes/Logo-tablaroca-blanco.png" alt="Arco 2"></a>
+    <a class="img-arco arco3" href="subpagina3.html"><img src="imagenes/Logo-tecnología-blanco.png" alt="Arco 3"></a>
+    <a class="img-arco arco4" href="subpagina4.html"><img src="imagenes/Logo-aislamiento-blanco.png" alt="Arco 4"></a>
+    <a class="img-arco arco5" href="subpagina5.html"><img src="imagenes/Logo-electricidad-blanco.png" alt="Arco 5"></a>
+  </div>
+
+
+</body>
+</html>
