@@ -1,0 +1,370 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+
+
+/* Mejora para móviles */
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll; /* Quita el efecto fijo en móviles */
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* --- Menú fijo estilo Apple --- */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: transparent; /* Fondo transparente */
+  box-shadow: none;        /* Sin sombra */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  height: 68px;
+}
+
+.main-header .logo img {
+  height: 48px;
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+  background: linear-gradient(90deg, #ec4040 0%, #ebee26 100%); /* Azul a celeste */
+  border: none;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  margin: 0 6px; /* Espacio entre botones */
+}
+
+.menu a:hover {
+  background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 100%);
+  color: #fff;
+}
+
+/* Submenú */
+.menu ul ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: none;
+  flex-direction: column;
+  background: #121629; /* Submenú más oscuro */
+  border-radius: 15px;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu > ul > li {
+  margin: 0 10px;
+}
+
+.menu li.has-submenu:hover > ul,
+.menu li.has-submenu:focus-within > ul {
+  display: flex;
+}
+
+.menu li.has-submenu > a::after {
+  content: ' ▶';
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 6px;
+}
+
+.menu ul ul li.has-submenu > a::after {
+  content: ' ▶';
+  font-size: 0.8em;
+  color: #fff;
+  margin-left: 6px;
+}
+
+.menu ul ul li a {
+  border-radius: 0;
+  padding: 10px 20px;
+  color: #fff;
+  background: transparent;
+  display: block;
+  transition: background 0.2s;
+}
+
+.menu ul ul li a:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* --- Redes sociales vertical --- */
+.social-vertical {
+  position: fixed;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 1200;
+}
+
+.social-vertical a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  font-size: 1.6rem;
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.social-vertical a:hover {
+  background: #0071e3;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,113,227,0.13);
+  transform: scale(1.12);
+}
+
+/* --- Botón flotante de WhatsApp --- */
+.whatsapp-float {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1500;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.25);
+  background: #1ebe5d;
+}
+.whatsapp-float img {
+  display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  .social-vertical {
+    left: 6px;
+    gap: 10px;
+  }
+  .social-vertical a {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+    padding: 4px;
+  }
+  .whatsapp-float img {
+    width: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-header {
+    height: 54px;
+    padding: 0 2%;
+  }
+  .main-header .logo img {
+    height: 32px;
+  }
+  .menu a {
+    font-size: 0.98rem;
+    padding: 6px 10px;
+  }
+  .menu ul {
+    gap: 10px;
+  }
+}
+
+/* Menú vertical en móviles */
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    height: auto;
+    padding: 8px 2%;
+    background: rgba(0,0,0,0.7); /* Mejor visibilidad en fondo */
+  }
+  .menu {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .menu ul {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .menu a {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .main-header .logo img {
+    margin-bottom: 8px;
+  }
+}
+
+/* --- Fondo de pantalla --- */
+.bg-image {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-image picture,
+.bg-image img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* --- Animación arco --- */
+.arco-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;      /* Aumenta el ancho */
+  height: 650px;     /* Aumenta el alto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.img-central {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  z-index: 2;
+  animation: color-ciclo 6s linear infinite;
+}
+
+@keyframes color-ciclo {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.img-arco {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.3s;
+  width: 160px;
+  z-index: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none; /* quita subrayado de los <a> */
+}
+
+
+
+/* Efecto hover/focus para los demás */
+.img-arco:hover,
+.img-arco:focus {
+  transform: scale(1.13);
+  z-index: 3;
+}
+
+.img-arco img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; /* Opcional: evita arrastrar la imagen accidentalmente */
+}
+
+/* Ajusta las posiciones para el nuevo tamaño */
+.arco1 { left: -5%;  top: 290px; animation: aparecer 0.7s 1.4s forwards; }
+.arco2 { left: 5%;   top: 80px;  animation: aparecer 0.7s 0.7s forwards; }
+.arco3 { left: 40%;  top: 10px;  animation: aparecer 0.7s 0s forwards; }
+.arco4 { right: 5%;  top: 80px;  animation: aparecer 0.7s 0.7s forwards; }
+.arco5 { right: -5%; top: 290px; animation: aparecer 0.7s 1.4s forwards; }
+
+@keyframes aparecer {
+  to { opacity: 1; }
+}
+
+
+
+.arco-titulo {
+  color: #00d856;
+  font-size: 3.5rem; /* Antes: 2.5rem */
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.arco-subtexto {
+  color: #fff;
+  font-size: 2rem; /* Antes: 1.2rem */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.arco-textos {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 80px; /* : bottom: 0; */
+  width: 100%;
+  /* background: rgba(255,255,255,0.85); */
+  text-align: center;
+  padding: 20px 0;
+  z-index: 1000;
+}
